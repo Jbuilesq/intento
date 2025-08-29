@@ -1,0 +1,183 @@
+#stroop-section {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 70vh;
+    box-sizing: border-box;
+}
+
+/* El contenedor principal del juego Stroop */
+#stroop-section {
+    width: 100%;
+}
+#stroop-container,
+#stroop-test,
+#stroop-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    color: #6c1bb1; 
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+#stroop-instructions {
+    color: #4a4a4a;
+    font-size: 1.4rem; 
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#stroop-task-title {
+    color: #6c1bb1;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+/* Estilo del estímulo consistente con Go-NoGo */
+.stimulus,
+#stroop-stimulus {
+    font-size: 4.5rem; 
+    font-weight: bold;
+    margin: 30px 0;
+    background: #fff;
+    border: 3px solid #8a2be2;
+    border-radius: 18px;
+    padding: 40px 60px;
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    min-width: 180px;
+    min-height: 100px;
+    box-sizing: border-box;
+}
+
+.options,
+#stroop-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin: 20px 0 0 0;
+}
+
+/* Estilo de botones consistente con Go-NoGo */
+.options button,
+#stroop-options button {
+    font-size: 1.2rem;
+    margin: 8px;
+    padding: 15px 40px;
+    cursor: pointer;
+    background: transparent;
+    border: 3px solid #8a2be2;
+    border-radius: 999px;
+    font-weight: bold;
+    color: #222;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+}
+
+.options button:hover,
+#stroop-options button:hover {
+    background: #8a2be2;
+    color: #fff;
+}
+
+#stroop-timer {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+#stroop-task-counter {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* Botones de navegación consistentes con Go-NoGo */
+#stroop-start-btn,
+#stroop-next-test-btn,
+#stroop-start-task-btn {
+    font-size: 1.4rem;
+    padding: 16px 38px;
+    margin-top: 30px;
+    cursor: pointer;
+    background: #8a2be2;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(138, 43, 226, 0.08);
+}
+
+#stroop-start-btn:hover,
+#stroop-start-task-btn:hover {
+    background: #6c1bb1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Caja de resultados consistente con Go-NoGo */
+#stroop-result {
+    font-size: 1.3rem;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(138, 43, 226, 0.07);
+    padding: 32px 24px;
+}
+
+#stroop-result h2 {
+    color: #8a2be2;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+#stroop-result ul {
+    text-align: left;
+    margin: 18px auto 0 auto;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* #stroop-result button {
+    margin-top: 24px;
+    background: #8a2be2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s; 
+}
+    */
+
+#stroop-result button:hover {
+    background: #6c1bb1;
+}

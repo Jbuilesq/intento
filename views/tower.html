@@ -1,0 +1,43 @@
+<section id="tower">
+
+    <div id="instructions">
+        <h2>Torre de Hanoi</h2>
+
+        <div id="towerInfo">
+            <h3>Instrucciones</h3>
+            <p>
+                El objetivo de este test es mover todos los discos desde la Torre A (Torre del costado izquierdo) hasta
+                la Torre C (Torre del costado derecho),
+                siguiendo estas reglas:
+            </p>
+            <ul>
+                <li>Solo puedes mover un disco a la vez.</li>
+                <li>Solo el disco superior de una torre se puede mover.</li>
+                <li>No puedes colocar un disco grande sobre uno pequeño.</li>
+
+            </ul>
+            <button id="startBtn">Comenzar juego</button>
+        </div>
+    </div>
+
+    <div id="game" hidden>
+        <div id="container">
+            <div id="a"></div>
+            <div id="b"></div>
+            <div id="c"></div>
+        </div>
+
+        <div id="output" hidden>
+            Moves: <span id="moves">0</span> <br>
+            Time left: <span id="timer">480</span> seconds <br>
+            Disks in C: <span id="inC">0</span>
+            <div style="color: black; font-size: 2em;"></div>
+        </div>
+    </div>
+
+    <div id="result" hidden>
+        <h2>Fin del text</h2>
+        <p id="gameSummary"></p>
+        <button id="nextBtn">Siguiente</button>
+    </div>
+</section>

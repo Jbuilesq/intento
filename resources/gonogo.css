@@ -1,0 +1,223 @@
+/* body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f0f9; 
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}  */
+
+
+#GoNoGo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+#container-gonogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-none,
+.hidden {
+    display: none !important;
+}
+
+/* ===============================
+   Go/No-Go adaptado al estilo Stroop
+================================= */
+
+
+#goNoGo-section h2,
+#stage-title {
+    color: #6c1bb1;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+#stage-instructions {
+    color: #4a4a4a;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#stage-progress {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* Botones principales y opciones */
+#goNoGo-section button,
+#section-si-no-otro button,
+#section-colores button,
+#section-signals button,
+#start,
+#begin-stage,
+#next-stage {
+    font-size: 1.2rem;
+    margin: 8px;
+    padding: 15px 40px;
+    cursor: pointer;
+    background: transparent;
+    border: 3px solid #8a2be2;
+    border-radius: 999px;
+    font-weight: bold;
+    color: #222;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+}
+
+#goNoGo-section button:hover,
+#section-si-no-otro button:hover,
+#section-colores button:hover,
+#section-signals button:hover,
+#start:hover,
+#begin-stage:hover,
+#next-stage:hover {
+    background: #8a2be2;
+    color: #fff;
+}
+
+/* Botones de inicio y siguiente etapa */
+#start,
+#begin-stage,
+#next-stage {
+    font-size: 1.4rem;
+    padding: 16px 38px;
+    margin-top: 30px;
+    background: #8a2be2;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(138, 43, 226, 0.08);
+}
+
+#start:hover,
+#begin-stage:hover,
+#next-stage:hover {
+    background: #6c1bb1;
+}
+
+/* Estímulo */
+#stimulus,
+.stimulus-text {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin: 30px 0;
+    background: #fff;
+    border: 3px solid #8a2be2;
+    border-radius: 18px;
+    padding: 40px 60px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    min-width: 180px;
+    min-height: 100px;
+    box-sizing: border-box;
+}
+
+/* Resultados */
+#results {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(138, 43, 226, 0.07);
+    padding: 32px 24px;
+    color: #8a2be2;
+}
+
+/* Opciones alineadas */
+#section-si-no-otro,
+#section-colores,
+#section-signals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin: 20px 0 0 0;
+}
+
+/* Otros helpers */
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.py-4 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.gap-3 {
+    gap: 60px !important;
+}
+
+
+.stimulus-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    border: 3px solid #8a2be2;
+    background: #fff;
+}
+
+.color-rojo {
+    background: red !important;
+}
+
+.color-azul {
+    background: blue !important;
+}
+
+.color-amarillo {
+    background: yellow !important;
+}
+
+.color-verde {
+    background: green !important;
+}

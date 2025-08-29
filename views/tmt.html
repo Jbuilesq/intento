@@ -1,0 +1,26 @@
+    <section id="tmt-section">
+
+        <h2 id="main-title">Trail Making Test</h2>
+        <div class="controls">
+            <button id="reset-button">Iniciar</button>
+            <button id="end-test-button" class="hidden">Terminar Parte</button>
+            <div class="info hidden">Tiempo: <span id="timer">0s</span></div>
+            <div class="info hidden">Errores: <span id="error-counter">0</span></div>
+            <div class="info hidden">Aciertos: <span id="hit-counter">0</span></div>
+        </div>
+
+        <div class="content-wrapper">
+            <div id="instructions-panel" class="hidden">
+                <h3>Instrucciones</h3>
+                <p id="instructions-text"></p>
+            </div>
+            <div id="test-container">
+                <canvas id="canvas"></canvas>
+                <!-- Los círculos con los números se generarán aquí con JavaScript -->
+            </div>
+        </div>
+
+        <div id="results" class="hidden">
+            <h2>Finalizaste tu Prueba</h2>
+        </div>
+    </section>

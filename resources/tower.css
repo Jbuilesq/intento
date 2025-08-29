@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+}
+
+div#container {
+    display: flex;
+    width: 80dvw;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+div#container>div {
+    height: 450px;
+    flex: 1;
+    border: 1px solid #3b37a4;
+    border-radius: 10px;
+    overflow: hidden;;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    gap: .25rem;
+
+}
+
+div#container>div::before {
+    content: "";
+    width: 6%;
+    height: 80%;
+    background: rgb(153, 71, 16);
+    position: absolute;
+    z-index: 0;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+}
+
+div#container>div>div {
+    position: relative;
+}
+
+div#container>div>div.shaking {
+    opacity: .8;
+    animation: shake 0.35s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(2px, 2px) rotate(2.5deg);
+    }
+
+    50% {
+        transform: translate(0, 0) rotate(0eg);
+    }
+
+    75% {
+        transform: translate(-2px, 2px) rotate(-2.5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+div#c {
+    background-color: #aaaaaa;
+}
+
+/* Disk styles */
+div#disk_1 {
+    width: 20%;
+    height: 40px;
+    background-color: #26daff;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset;
+
+}
+
+div#disk_2 {
+    width: 30%;
+    height: 40px;
+    background-color: #555555;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset;
+}
+
+div#disk_3 {
+    width: 40%;
+    height: 40px;
+    background-color: #ff8c11;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset;
+}
+
+div#disk_4 {
+    width: 50%;
+    height: 40px;
+    background-color: #00d41e;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset;
+}
+
+div#disk_5 {
+    width: 60%;
+    height: 40px;
+    background-color: #1b7cb8;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset;
+}
+
+div#disk_6 {
+    width: 75%;
+    height: 40px;
+    background-color: #ed252b;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset;
+}
+
+div#disk_7 {
+    width: 90%;
+    height: 40px;
+    background-color: #693291;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset;
+}
+
+.disk {
+    border-radius: 12px;
+    margin: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
