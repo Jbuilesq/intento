@@ -141,3 +141,75 @@ div#disk_7 {
     justify-content: center;
     cursor: pointer;
 }
+
+/* --- INSTRUCCIONES ESTILO STROOP --- */
+#instructions {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(138, 43, 226, 0.07);
+    padding: 32px 24px;
+    max-width: 520px;
+    margin: 40px auto 24px auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tower-title {
+    color: #6c1bb1;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 18px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.tower-subtitle {
+    color: #6c1bb1;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tower-desc {
+    color: #4a4a4a;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.tower-list {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.tower-list li {
+    list-style: none;
+}
+
+
+
+.tower-btn {
+    font-size: 1.2rem;
+    padding: 14px 36px;
+    margin-top: 18px;
+    cursor: pointer;
+    background: #8a2be2;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(138, 43, 226, 0.08);
+    
+}
+
+.tower-btn:hover {
+    background: #6c1bb1;
+}

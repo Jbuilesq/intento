@@ -2,7 +2,7 @@
 // Game state variables
 // ==============================
 let towers;
-let totalDisks;
+let number_pieces;
 let moveCounter;
 let timeLeft;
 let timerInterval;
@@ -18,10 +18,6 @@ export function initTower() {
         setupGame();
     });
 
-    document.getElementById("nextBtn").addEventListener("click", () => {
-        // 👉 Aquí rediriges a donde quieras (otra vista o módulo)
-        window.location.href = "/next.html";
-    });
 }
 
 // ==============================
@@ -32,10 +28,10 @@ function showGame() {
     document.getElementById("game").hidden = false;
 }
 
-function showResult(summary) {
+function showResult() {
     document.getElementById("game").hidden = true;
     document.getElementById("result").hidden = false;
-    document.getElementById("gameSummary").innerHTML = summary;
+    
 }
 
 // ==============================
@@ -43,9 +39,9 @@ function showResult(summary) {
 // ==============================
 function setupGame() {
     towers = { "a": ["disk_1", "disk_2", "disk_3", "disk_4", "disk_5", "disk_6", "disk_7"] };
-    totalDisks = 7;
+    number_pieces = 7;
     moveCounter = 0;
-    timeLeft = 10;
+    timeLeft = 480;
     timerInterval = null;
     timerStarted = false;
 
@@ -94,7 +90,7 @@ function dragEnd(e) {
     const finalTower = document.getElementById("c");
     e.target.classList.remove('shaking');
 
-    if (finalTower.childNodes.length === totalDisks) {
+    if (finalTower.childNodes.length === number_pieces) {
         clearInterval(timerInterval);
 
         // Generate final summary
@@ -104,7 +100,7 @@ function dragEnd(e) {
         let summary = `
             ✅ Juego completado <br>
             Movimientos: ${gameData.moves} <br>
-            Tiempo usado: ${gameData.timeUsed}s <br>
+            Tiempo usado: ${gameData.time}s <br>
             <br>
             Torres finales: <br>
             A: [${getDisksInTower("a").join(", ")}] <br>
@@ -112,7 +108,7 @@ function dragEnd(e) {
             C: [${getDisksInTower("c").join(", ")}]
         `;
 
-        showResult(summary);
+        showResult();
     }
 }
 
@@ -195,15 +191,32 @@ function getDisksInTower(towerId) {
 }
 
 function exportGameData() {
+    let number_pieces_r_side = getDisksInTower("c").length; // solo cantidad
+    let motion_rating = (number_pieces_r_side / number_pieces) * 3.5;
+
+    let time = 480 - timeLeft;
+    let motion_rating2 = 0;
+
+    if (time <= 60) {
+        motion_rating2 = 1.5;
+    } else {
+        let penalty = (time - 60) * (1.5 / 420);
+        motion_rating2 = Math.max(0, 1.5 - penalty);
+    }
+
+    let total_hanoi = motion_rating + motion_rating2;
+
     return {
-        totalDisks: totalDisks,
-        moves: moveCounter,
-        disksInA: getDisksInTower("a"),
-        disksInB: getDisksInTower("b"),
-        disksInC: getDisksInTower("c"),
-        timeUsed: 480 - timeLeft
+        number_pieces: number_pieces,
+        number_pieces_r_side: number_pieces_r_side, // ahora es número, no array
+        motion_rating: parseFloat(motion_rating.toFixed(2)),
+        time: time,
+        motion_rating2: parseFloat(motion_rating2.toFixed(2)),
+        total_hanoi: parseFloat(total_hanoi.toFixed(2))
     };
 }
+
+
 
 
 
@@ -219,10 +232,6 @@ function goToGameOver() {
         ⏳ Tiempo agotado <br>
         Movimientos: ${gameData.moves} <br>
         <br>
-        Torres finales: <br>
-        A: [${gameData.disksInA.join(", ")}] <br>
-        B: [${gameData.disksInB.join(", ")}] <br>
-        C: [${gameData.disksInC.join(", ")}]
     `;
 
     showResult(summary);

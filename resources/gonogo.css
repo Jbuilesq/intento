@@ -221,3 +221,10 @@
 .color-verde {
     background: green !important;
 }
+
+.btn:active,
+.btn.pressed {
+  transform: scale(0.9);
+  background-color: #444; /* cambia un poco el color al presionar */
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}

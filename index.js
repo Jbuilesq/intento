@@ -1,8 +1,9 @@
 import { initTower } from "./resources/tower.js";
 import { login } from "./resources/login.js";
 import { initStroop } from "./resources/stroop.js";
-import GoNoGoGame from "./resources/Gono_go.js";
+import { GoNoGoGame } from "./resources/Gono_go.js";
 import { initTMT } from "./resources/tmt.js";
+import { updateTestResults } from "./resources/updateResults.js";
 
 
 // Definimos las rutas del SPA
@@ -11,7 +12,8 @@ const routes = {
   "/tower": "./views/tower.html",
   "/stroop": "./views/stroop.html",
   "/gonogo": "./views/gonogo.html",
-  "/tmt": "./views/tmt.html"
+  "/tmt": "./views/tmt.html",
+  "/logout": "./views/logout.html"
 };
 
 
@@ -91,9 +93,11 @@ export async function navigate(pathname) {
   } else if (pathname === "/stroop") {
     initStroop();
   } else if (pathname === "/gonogo") {
-    initGoNoGo();
+    GoNoGoGame();
   } else if (pathname === "/tmt") {
     initTMT();
+  } else if (pathname === "/logout") {
+    updateTestResults();
   }
 }
 
@@ -124,7 +128,7 @@ window.addEventListener("DOMContentLoaded", () => {
       navigate(currentPath);
     }
   } else {
-    if (!routes[currentPath] || currentPath === "/" || currentPath === "/tower" || currentPath === "/stroop" || currentPath === "/gonogo" || currentPath === "/tmt") {
+    if (!routes[currentPath] || currentPath === "/" || currentPath === "/tower" || currentPath === "/stroop" || currentPath === "/gonogo" || currentPath === "/tmt" || currentPath === "/logout") {
       navigate("/login");
     } else {
       navigate(currentPath);
@@ -146,26 +150,3 @@ window.addEventListener("DOMContentLoaded", () => {
 //   window.location.href = "./index.html";              // Redirige al login
 // }
 
-
-// Variables de david
-
-function initGoNoGo() {
-  const gngSection = document.getElementById('GoNoGo-section');
-  const stroopSection = document.getElementById('stroop-section');
-
-
-  const participantId = 'participante-test-01';//------------
-  const sessionId = 'sesion-test-abc'; //--------------
-
-
-  const onGngComplete = (results) => {
-    console.log('Go/No-Go finalizado. Resultados:', results);
-
-    gngSection.classList.add('d-none');
-    stroopSection.classList.remove('d-none');
-
-  };
-
-
-  new GoNoGoGame(gngSection, onGngComplete, { participantId, sessionId, debug: true });
-};

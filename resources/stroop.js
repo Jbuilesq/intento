@@ -57,7 +57,7 @@ export function initStroop() {
     let P_C = 0;
 
     // variable que se encarga de calcular la interferencia 
-    let interference = 0;
+    let Interference = 0;
 
     // Variables para almacenar el tiempo de cada tarea
     let time_homework_p = 0;
@@ -65,6 +65,7 @@ export function initStroop() {
     let time_homework_pc = 0;
 
     let time = 0; // Variable para almacenar el tiempo total en segundos
+    let climb = "Prueba";
 
     // DOM
     const startBtn = document.getElementById('stroop-start-btn');
@@ -226,7 +227,7 @@ export function initStroop() {
     let total_stroop = 0;
 
     // Función para clasificar el resultado de total_stroop
-    function climb(total_stroop) {
+    function climbs(total_stroop) {
         if (total_stroop <= 0.29) {
             return "muy bajo";
         } else if (total_stroop <= 0.6) {
@@ -255,7 +256,7 @@ export function initStroop() {
         }
 
         // calcular la interferencia
-        interference = pc - P_C;
+        Interference = pc - P_C;
 
         // Calcula total_stroop solo si time no es 0 para evitar división por cero
         if (time !== 0) {
@@ -265,7 +266,7 @@ export function initStroop() {
         }
 
         // Clasificación usando climb
-        const climbResult = climb(total_stroop);
+        climb = climbs(total_stroop);
 
         //fin del test
         let detalle = `
@@ -296,13 +297,14 @@ export function initStroop() {
             c,
             pc,
             P_C,
-            interference,
+            Interference,
             time_homework_p,
             time_homework_c,
             time_homework_pc,
             time,
             total_stroop,
-            timeLeft // <-- Guarda el tiempo restante de la tarea actual
+            timeLeft, // <-- Guarda el tiempo restante de la tarea actual
+            climb
         };
         localStorage.setItem('stroop_state', JSON.stringify(state));
     }
@@ -319,7 +321,7 @@ export function initStroop() {
             c = state.c;
             pc = state.pc;
             P_C = state.P_C;
-            interference = state.interference;
+            Interference = state.Interference;
             time_homework_p = state.time_homework_p;
             time_homework_c = state.time_homework_c;
             time_homework_pc = state.time_homework_pc;
@@ -330,6 +332,7 @@ export function initStroop() {
             } else {
                 timeLeft = 45;
             }
+            climb = state.climb;
         }
     }
 
